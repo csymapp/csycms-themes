@@ -8,10 +8,18 @@
         {{#searchResults}}
           <div class="paged">
             <h2 >
+              {{#Oslug}}
+                <a href="{{Oslug}}">
+                  {{title}} 
+                  {{#category}}<span style="color: #DDD;">({{category}})</span>{{/category}}
+                </a>
+              {{/Oslug}}
+              {{^Oslug}}
               <a href="{{config.base_url}}/{{slug}}">
                 {{title}} 
                 {{#category}}<span style="color: #DDD;">({{category}})</span>{{/category}}
               </a>
+              {{/Oslug}}
             </h2>
             <div class="page-excerpt">{{{excerpt}}}</div>
           </div>
