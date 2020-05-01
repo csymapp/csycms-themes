@@ -200,3 +200,8 @@ blockquote>blockquote>blockquote>blockquote>p {
 .scrollbar-inner>.scroll-element .scroll-bar {
   background-color: #4D321E
 }
+
+
+nav.custom ul li a:hover {
+  background-color: #7E685D
+}
