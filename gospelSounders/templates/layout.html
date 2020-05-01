@@ -5,6 +5,14 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <title>{{#meta.title}}{{meta.title}} - {{/meta.title}}{{config.site_title}}</title>
+    {{#meta.metadata.description}}<meta name="description" content="{{meta.metadata.description}}">{{/meta.metadata.description}}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="{{config.base_url}}/icon.png">
+    <link rel="stylesheet" href="{{config.base_url}}/themes/default/styles/uf_style.css">
+    <link rel="stylesheet" href="{{config.base_url}}/themes/default/styles/cstyle.css">
+    <link rel="stylesheet" href="{{config.base_url}}/sites/gsSite1/styles/cstyle.css"> -->
   <title> {{#meta.title}}{{meta.title}} - {{/meta.title}}{{config.site_title}}</title>
   {{#meta.metadata.description}}
   <meta name="description" content="{{meta.metadata.description}}" />{{/meta.metadata.description}}
@@ -38,58 +46,22 @@
     src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0&appId=156811091033253&autoLogAppEvents=1">
   </script>
 
-
   <div class="wrapper">
     <div class="navbar-fixed" id="nav-main">
       <nav class="custom">
-        <div class="nav-wrapper">
+        <div class="nav-wrapper" style="background-color: #52372A;">
           <a href="{{config.base_url}}/" class="brand-logo"
-            style="padding-left: 2rem; text-transform: uppercase; font-size:{{config.title_size}}em;">{{config.site_title}}</a>
+            style="padding-left: 2rem; text-transform: uppercase;font-size: 1.4em;">{{config.site_title}}</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down" id="headerLinks">
-            {{#config.externalLinks}}
-            <li>{{{.}}}</li>
-            {{/config.externalLinks}}
-            {{#config.telegram}}
-            <span id="nav-social">
-              <li class="fa-stack"><a href="{{config.telegram}}" target="_blank"><i
-                    class="fa fa-circle fa-stack-2x"></i><i class="fa fa-telegram fa-stack-1x"></i></a></li>
-            </span>
-            {{/config.telegram}}
-            {{#config.whatsapp}}
-            <span id="nav-social">
-              <li class="fa-stack"><a href="{{config.whatsapp}}" target="_blank"><i
-                    class="fa fa-circle fa-stack-2x"></i><i class="fa fa-whatsapp fa-stack-1x"></i></a></li>
-            </span>
-            {{/config.whatsapp}}
-            {{#config.facebook}}
-            <span id="nav-social">
-              <li class="fa-stack"><a href="{{config.facebook}}" target="_blank"><i
-                    class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></a></li>
-            </span>
-            {{/config.facebook}}
-            {{#config.youtube}}
-            <span id="nav-social">
-              <li class="fa-stack"><a href="{{config.youtube}}" target="_blank"><i
-                    class="fa fa-circle fa-stack-2x"></i><i class="fa fa-youtube fa-stack-1x"></i></a></li>
-            </span>
-            {{/config.youtube}}
-            {{#config.github}}
-            <span id="nav-social">
-              <li class="fa-stack"><a href="{{config.github}}" target="_blank"><i
-                    class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x"></i></a></li>
-            </span>
-            {{/config.github}}
-          </ul>
+
         </div>
       </nav>
     </div>
 
-    <nav id="sidebar">
+    <nav id="sidebar" style="background-color:#8A5E3B; color: #fff;">
       <div id="header-wrapper">
-        <div id="header">
-          <a id="logo" href="#"><span class="logo-title" style="font-size:{{config.title_size}}em;">
-              {{config.site_title}}</span>
+        <div id="header" style="background-color:#8A5E3B !important;;">
+          <a id="logo" href="#"><span class="logo-title" style="font-size: 1.4em;"> {{config.site_title}}</span>
           </a>
           <form class="searchbox" action="{{config.base_url}}/">
             <label for="search-by"><i class="fa fa-search"></i></label>
@@ -97,19 +69,6 @@
               placeholder="{{lang.global.search}}">
             <span data-search-clear><i class="fa fa-close"></i></span>
           </form>
-          <div id="mobile-nav">
-            {{#config.facebook}}
-            <a href="{{config.facebook}}">Facebok</a>
-            {{/config.facebook}}
-
-            {{#config.github}}
-            <a href="{{config.facebook}}">Github</a>
-            {{/config.github}}
-            {{#config.github}}
-            <a href="{{config.facebook}}">Youtube</a>
-            {{/config.github}}
-          </div>
-
         </div>
       </div>
 
@@ -137,32 +96,29 @@
               </a>
               <ul>
                 {{#files}}
-                <li class="dd-item {{#parent}} parent{{/parent}} {{#active}} active{{/active}}"
-                  data-nav-id="{{config.base_url}}/{{slug}}">
+                <li class="dd-item {{#active}} active{{/active}}" data-nav-id="{{config.base_url}}/{{slug}}">
                   <a href="{{slug}}">
                     <i class="fa fa-check read-icon"></i>
                     <span>{{title}}</span>
                   </a>
                   <ul>
                     {{#files}}
-                    <li class="dd-item {{#parent}} parent{{/parent}} {{#active}} active{{/active}}"
-                      data-nav-id="{{config.base_url}}/{{slug}}">
+                    <li class="dd-item {{#active}} active{{/active}}" data-nav-id="{{config.base_url}}/{{slug}}">
                       <a href="{{slug}}">
                         <i class="fa fa-check read-icon"></i>
                         <span>{{title}}</span>
                       </a>
-                      <ul>
-                        {{#files}}
-                        <li class="dd-item {{#parent}} parent{{/parent}} {{#active}} active{{/active}}"
-                          data-nav-id="{{config.base_url}}/{{slug}}">
-                          <a href="{{slug}}">
-                            <i class="fa fa-check read-icon"></i>
-                            <span>{{title}}</span>
-                          </a>
-                        </li>
-                        {{/files}}
-                      </ul>
                     </li>
+                    <ul>
+                      {{#files}}
+                      <li class="dd-item {{#active}} active{{/active}}" data-nav-id="{{config.base_url}}/{{slug}}">
+                        <a href="{{slug}}">
+                          <i class="fa fa-check read-icon"></i>
+                          <span>{{title}}</span>
+                        </a>
+                      </li>
+                      {{/files}}
+                    </ul>
                     {{/files}}
                   </ul>
                 </li>
@@ -179,17 +135,7 @@
           </ul>
           <hr />
 
-          <a class="padding" href="#" data-clear-history-toggle><i class="fa fa-fw fa-history"></i> Clear
-            History</a><br />
 
-          <section id="footer">
-            <p>Built with <a href="http://csycms.csymapp.com">csyms</a> - A Flat File CMS for node</p>
-            <p>
-              {{#config.copyright}}
-              <p>{{{config.copyright}}}</p>
-              {{/config.copyright}}
-            </p>
-          </section>
         </div>
       </div>
     </nav>
@@ -222,17 +168,11 @@
             {{^breadCrumbs}}
             <br>
             {{/breadCrumbs}}
-            <a class="fb-share-c" target="_blank"
-              href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsabbathschool.gospelsounders.org%2FSabbath-School&amp;src=sdkpreparse"
-              style="text-decoration: none; float:right;">
-              <i class="a-icon fa fa-share"></i>Share
-            </a>
           </div>
-          {{#Toc}}
+
           <div class="toc">
             <ol data-toc="body" data-toc-headings="h2, h3"></ol>
           </div>
-          {{/Toc}}
         </div>
         {{{yield}}}
 
@@ -245,7 +185,6 @@
         {{#navSlugs.next}}<a class="nav nav-next" href={{navSlugs.next}}><i
             class="fa fa-chevron-right"></i></a>{{/navSlugs.next}}
       </div>
-
     </section>
 
 
@@ -311,11 +250,12 @@
 
   <script>
     $(document).ready(function () {
-        $('.fb-share-c').attr('href',
-        `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(window.location.href)}`)
+
       let auth = $('#authC').html()
       try {
+        console.log(auth)
         auth = JSON.parse(auth);
+        console.log(auth)
         if (auth.accessToken) {
           localStorage.setItem("token", auth.accessToken)
           if (!localStorage.getItem("returnafterlogin"))
@@ -355,6 +295,7 @@
 
   </script>
 
+
   <!-- Popper.JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
     integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
@@ -378,15 +319,6 @@
         $('[search]').val('').trigger('input');
         sessionStorage.removeItem('search-input');
       });
-
-      $('.tabs-wrapper > ul a[rel="tab"]').click(function (event) {
-        event.preventDefault();
-        $(this).parent().siblings().removeClass("current");
-        $(this).parent().addClass("current");
-        var tab = $(this).attr("href");
-        $(tab).siblings().css('display', 'none');
-        $(tab).fadeIn()
-      })
     });
 
   </script>
